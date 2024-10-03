@@ -1,0 +1,13 @@
+[Unit]
+Description=Python remote executor
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/python-remote-executor
+Restart=always
+Type=forking
+ExecStart=/opt/python-remote-executor/start.bash start
+ExecStop=/opt/python-remote-executor/start.bash stop
+
+[Install]
+WantedBy=multi-user.target

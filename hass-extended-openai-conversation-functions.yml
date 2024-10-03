@@ -1,0 +1,23 @@
+- spec:
+    name: run_python_code_snippet
+    description: Use this function to run code into Python environment
+    parameters:
+      type: object
+      properties:
+        script:
+          type: string
+          description: Python code
+        requirements:
+          type: string
+          description: Python requirements.txt containing third-party librairies from https://pypi.org/
+      required:
+      - script
+      - requirements
+  function:
+    type: script
+    sequence:
+    - service: python_remote_executor.run_python_script
+      data:
+        script: '{{script}}'
+        requirements: '{{requirements}}'
+      response_variable: _function_result

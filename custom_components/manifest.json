@@ -1,0 +1,7 @@
+{
+  "domain": "python_remote_executor",
+  "name": "Python Remote Executor",
+  "config_flow": false,
+  "version": "1.0.0",
+  "requirements": ["requests"]
+}

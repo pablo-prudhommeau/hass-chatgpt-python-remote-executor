@@ -1,0 +1,9 @@
+run_python_script:
+  description: "Run a custom Python script"
+  fields:
+    script:
+      description: "The Python script to execute"
+      example: "print('Hello, world!')"
+    requirements:
+      description: "Python requirements.txt"
+      exemple: "Flask==1.0.2"
