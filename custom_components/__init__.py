@@ -24,7 +24,7 @@ def setup(hass, config):
         requirements = call.data.get("requirements")
         url = "http://<REMOTE_EXECUTOR_HOST>:6000/run_script"
         try:
-            response = requests.post(url, json={"script": script, "requirements": requirements})
+            response = requests.post(url, json={"script": script, "requirements": requirements}, timeout=10)
             return {"response" : response.text}
         except requests.RequestException as e:
             _LOGGER.error(f"Error executing script: {e}")
